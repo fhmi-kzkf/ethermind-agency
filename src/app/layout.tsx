@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   },
   description:
     "A boutique 4-person agency specializing in AI Automation, MVP Development, Custom Tools, and UI/UX Design. Agile, affordable, obsessively detail-oriented.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   keywords: [
     "AI automation",
     "MVP development",
