@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-ice-cyan: #d7f3f5;
+  --color-void: #020203;
+  --color-carbon: #111314;
+  --color-ice-cyan-dim: #d7f3f580;
+
+  /* Typography — Font Families */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography — Scale */
+  --text-caption: 10px;
+  --leading-caption: 1.56;
+  --text-caption-md: 12px;
+  --leading-caption-md: 1.5;
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.38;
+  --text-body: 16px;
+  --leading-body: 1.5;
+  --text-subheading: 30px;
+  --leading-subheading: 1.22;
+  --text-heading: 40px;
+  --leading-heading: 1.17;
+  --text-heading-lg: 50px;
+  --leading-heading-lg: 1.06;
+  --text-display: 134px;
+  --leading-display: 1;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-20: 20px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-60: 60px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-120: 120px;
+  --spacing-144: 144px;
+
+  /* Border Radius */
+  --radius-cards: 15px;
+  --radius-images: 15px;
+  --radius-buttons: 8px;
+
+  /* Surfaces */
+  --surface-void: #020203;
+  --surface-carbon: #111314;
+  --surface-ice-cyan: #d7f3f5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-void);
+  color: var(--color-ice-cyan);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ghost link — the only interactive treatment */
+.ghost-link {
+  color: var(--color-ice-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-ice-cyan);
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.ghost-link:hover {
+  opacity: 0.7;
+}
+
+/* Ghost link inverted — on ice cyan surface */
+.ghost-link-inverted {
+  color: var(--color-carbon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-carbon);
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.ghost-link-inverted:hover {
+  opacity: 0.7;
+}
+
+/* Section layout helpers */
+.section-gutter {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (min-width: 768px) {
+  .section-gutter {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-ice-cyan);
+  color: var(--color-void);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-carbon);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ice-cyan);
+}
+
+/* Form input styles */
+input, textarea, select {
+  background-color: var(--color-carbon);
+  border: 1px solid var(--color-ice-cyan);
+  color: var(--color-ice-cyan);
+  border-radius: var(--radius-buttons);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+  width: 100%;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-ice-cyan-dim);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-ice-cyan);
+  box-shadow: 0 0 0 1px var(--color-ice-cyan);
 }
