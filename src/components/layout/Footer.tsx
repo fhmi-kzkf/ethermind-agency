@@ -176,7 +176,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-4">
               <a
-                href="https://instagram.com/ethermind"
+                href="https://www.instagram.com/ethermind.agency/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ghost-link text-sm inline-flex items-center gap-2"
