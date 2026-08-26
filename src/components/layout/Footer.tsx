@@ -183,7 +183,7 @@ export default function Footer() {
                 data-cursor="link"
               >
                 <Globe size={14} strokeWidth={1.5} />
-                Instagram (@ethermind)
+                Instagram (@ethermind.agency)
               </a>
               <a
                 href="mailto:hello@ethermind.agency"
