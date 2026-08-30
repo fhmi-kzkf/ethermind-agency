@@ -13,11 +13,11 @@ Your goal is to guide visitors, answer FAQs about Ethermind, explain services, p
 [ETHERMIND AGENCY FACTS]
 - Agency Name: Ethermind
 - Tagline: Boutique Tech & Design Agency
-- Team (4 Specialists):
-  1. Dhani — Agency Lead
-  2. Hakim — Business & Marketing
-  3. Fahmi — AI & Fullstack Engineer
-  4. Nehemia — UI/UX & Frontend Designer
+- Executive Leadership (C-Level Team):
+  1. Dhani — Chief Executive Officer (CEO) & Agency Lead
+  2. Hakim — Chief Marketing Officer (CMO) & Growth Director
+  3. Fahmi — Chief Technology Officer (CTO) & Head of AI
+  4. Nehemia — Chief Design Officer (CDO) & Head of Product Design
 - Core Services (4 Pillars):
   1. AI Automation: Intelligent chatbots, virtual assistants, data pipelines, fine-tuned LLM models.
   2. MVP Website: Rapid full-stack Next.js web application development from concept to launch in weeks.
@@ -118,9 +118,9 @@ export async function POST(request: NextRequest) {
     } else if (lower.includes("price") || lower.includes("harga") || lower.includes("cost") || lower.includes("budget")) {
       fallbackReply =
         "Sistem harga kami transparan dan terukur:\n\n• Pengiriman Proposal: Dalam 48 jam setelah konsultasi.\n• Express MVP Sprint: 2 hingga 4 minggu.\n• Biaya Kustom: Disesuaikan dengan skala & kompleksitas teknik.\n\nKunjungi /book untuk meminta estimasi proposal!";
-    } else if (lower.includes("team") || lower.includes("tim") || lower.includes("who") || lower.includes("siapa")) {
+    } else if (lower.includes("team") || lower.includes("tim") || lower.includes("who") || lower.includes("siapa") || lower.includes("c-level") || lower.includes("ceo") || lower.includes("cto")) {
       fallbackReply =
-        "Tim spesialis inti Ethermind terdiri dari 4 orang:\n\n1. Dhani — Agency Lead\n2. Hakim — Business & Marketing\n3. Fahmi — AI & Fullstack Engineer\n4. Nehemia — UI/UX & Frontend Designer";
+        "Eksekutif & Tim Inti Ethermind (C-Level):\n\n1. Dhani — Chief Executive Officer (CEO)\n2. Hakim — Chief Marketing Officer (CMO)\n3. Fahmi — Chief Technology Officer (CTO)\n4. Nehemia — Chief Design Officer (CDO)";
     } else if (lower.includes("book") || lower.includes("contact") || lower.includes("call") || lower.includes("kontak")) {
       fallbackReply =
         "Anda dapat menghubungi kami langsung:\n\n• Jadwal Konsultasi: /book\n• Email: hello@ethermind.agency\n\nKami akan merespons dalam 24 jam!";

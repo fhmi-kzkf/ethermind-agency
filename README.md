@@ -25,7 +25,11 @@
    - **Custom Tools**: Bespoke internal admin dashboards, API integrations, workflow automation.
    - **UI/UX Design**: Conversion-focused interfaces, Figma design systems, interactive prototypes.
 3. **Interactive Pricing Scope Estimator**: Glassmorphic proposal status badge, visual risk/scale meters, and live tier preset switcher.
-4. **4-Person Specialist Team Grid**: Interactive grayscale-to-color cards for Dhani (Agency Lead), Hakim (Business & Marketing), Fahmi (AI & Fullstack), and Nehemia (UI/UX & Frontend).
+4. **4-Person Executive Leadership (C-Level Team)**: Interactive grayscale-to-color cards for:
+   - **Dhani**: Chief Executive Officer (CEO)
+   - **Hakim**: Chief Marketing Officer (CMO)
+   - **Fahmi**: Chief Technology Officer (CTO)
+   - **Nehemia**: Chief Design Officer (CDO)
 5. **Editorial Portfolio Showcase (`/portfolio`)**: Live category filter tabs (*All, AI, MVP, Tools, UI/UX*), 7 real project case studies with WebP screenshots, and a chronological project activity log.
 6. **Gemini AI Chatbot Widget**: Floating trigger button, glassmorphic chat modal, suggestions chips, markdown list formatter, and off-topic guardrails.
 7. **Gmail Booking Lead Integration (`/book`)**: Consultation form backed by Zod validation and Nodemailer HTML email notifications sent straight to your agency's Gmail inbox.
@@ -41,7 +45,7 @@ Create a `.env.local` file inside the `app/` directory:
 GEMINI_API_KEY=your_gemini_api_key_here
 
 # Gmail Lead Notification Setup (Google App Password)
-GMAIL_USER=hello@ethermind.agency
+GMAIL_USER=aiethermind@gmail.com
 GMAIL_APP_PASSWORD=your_16_character_app_password
 NOTIFICATION_EMAIL=hello@ethermind.agency
 ```
@@ -81,7 +85,7 @@ npm run start
 
 - Sensitive environment variables (`GEMINI_API_KEY`, `GMAIL_APP_PASSWORD`) are **never** prefixed with `NEXT_PUBLIC_`, ensuring they are strictly isolated to the server-side runtime and excluded from client JS bundles.
 - All client-side debug console logs are automatically suppressed for a clean browser experience.
-- Strict input validation via Zod protects API endpoints from payload overload and injection attacks.
+- Strict input validation via Zod protects API endpoints from payload overflow and injection attacks.
 
 ---
 
