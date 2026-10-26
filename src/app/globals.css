@@ -153,3 +153,13 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--color-ice-cyan);
   box-shadow: 0 0 0 1px var(--color-ice-cyan);
 }
+
+/* Checkbox — overrides the full-width text input styling above */
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: var(--color-ice-cyan);
+  cursor: pointer;
+}

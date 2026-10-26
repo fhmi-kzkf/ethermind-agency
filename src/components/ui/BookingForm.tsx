@@ -17,6 +17,9 @@ const leadSchema = z.object({
   projectType: z.enum(["AI", "MVP", "TOOLS", "UI_UX", "MULTIPLE"]),
   estimatedBudget: z.string().min(1, "Please select a budget range"),
   message: z.string().min(10, "Tell us a bit more about your project (min 10 chars)"),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "Please accept the Terms of Service and Privacy Policy to continue" }),
+  }),
 });
 
 type LeadFormData = z.infer<typeof leadSchema>;
@@ -196,6 +199,34 @@ export default function BookingForm({ defaultProjectType }: BookingFormProps) {
         {errors.message && (
           <p className="text-xs text-ice-cyan/60 mt-1 flex items-center gap-1">
             <AlertCircle size={12} /> {errors.message.message}
+          </p>
+        )}
+      </div>
+
+      {/* Consent */}
+      <div>
+        <label className="flex items-start gap-3 text-sm text-ice-cyan/60 leading-relaxed cursor-pointer">
+          <input
+            {...register("consent")}
+            type="checkbox"
+            className="mt-1 shrink-0"
+            aria-invalid={errors.consent ? true : undefined}
+          />
+          <span>
+            I have read and agree to the{" "}
+            <a href="/terms" target="_blank" rel="noopener noreferrer" className="ghost-link">
+              Terms of Service
+            </a>{" "}
+            and{" "}
+            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="ghost-link">
+              Privacy Policy
+            </a>
+            , and I consent to Ethermind processing the details above to respond to my inquiry.
+          </span>
+        </label>
+        {errors.consent && (
+          <p className="text-xs text-ice-cyan/60 mt-1 flex items-center gap-1">
+            <AlertCircle size={12} /> {errors.consent.message}
           </p>
         )}
       </div>

@@ -201,6 +201,8 @@ export default function Footer() {
         <div className="pt-16 mt-16 border-t border-ice-cyan/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ice-cyan/40">
           <p>© {new Date().getFullYear()} Ethermind Tech & Design Agency. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <GhostLink href="/terms" className="text-xs" data-cursor="link">Terms of Service</GhostLink>
+            <GhostLink href="/privacy" className="text-xs" data-cursor="link">Privacy Policy</GhostLink>
             <GhostLink href="#top" className="text-xs" data-cursor="link">Back to top ↑</GhostLink>
           </div>
         </div>

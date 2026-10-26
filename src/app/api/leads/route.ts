@@ -13,6 +13,9 @@ const leadSchema = z.object({
     .string()
     .min(10, "Message must be at least 10 characters")
     .max(2000, "Message must be under 2000 characters"),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "You must accept the Terms of Service and Privacy Policy" }),
+  }),
 });
 
 export async function POST(request: NextRequest) {
